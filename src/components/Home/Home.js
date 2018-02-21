@@ -17,13 +17,14 @@ fetch('https://api.soundcloud.com/tracks?client_id=db1a9cf92ac128e893bad0c79db66
 //lifestyle method fetch api!  attach on client ID
 .then(res => {
     return res.json()
-    // console.log(res)
+    console.log(res)
 }).then(data => {
-    // console.log(data)
+    console.log(data)
     const songs = data.map(song => {
         return (
             data = {
                 song_id: song.id,
+                uri: song.uri,
                 title: song.title,
                 songDuration: song.duration,
                 trackUri: song.uri,
@@ -62,9 +63,7 @@ fetch('https://api.soundcloud.com/tracks?client_id=db1a9cf92ac128e893bad0c79db66
                 </Col>
             </Row>
             <Row>
-                <div className='trackProgression'>
-                track progression
-                </div>
+
                 <Col s={12} className='grid-example'>
                         <Controls 
                         songs = {this.state.songs}/> 
@@ -72,7 +71,8 @@ fetch('https://api.soundcloud.com/tracks?client_id=db1a9cf92ac128e893bad0c79db66
             </Row>
             <Row>
             <Col s={12} className='grid-example'>
-                    <Playlist /> 
+                    <Playlist 
+                    songs = {this.state.songs}/> 
                 </Col>
             </Row>
             </div>
