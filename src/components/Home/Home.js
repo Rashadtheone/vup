@@ -19,7 +19,7 @@ fetch('https://api.soundcloud.com/tracks?client_id=db1a9cf92ac128e893bad0c79db66
     return res.json()
     // console.log(res)
 }).then(data => {
-    console.log(data)
+    // console.log(data)
     const songs = data.map(song => {
         return (
             data = {
@@ -37,7 +37,7 @@ fetch('https://api.soundcloud.com/tracks?client_id=db1a9cf92ac128e893bad0c79db66
                 genre: song.genre,
                 stream: song.stream_url,
                 sl: song.permalink_url
-            }
+            } 
         )
     })
     // console.log(songs)
@@ -67,7 +67,7 @@ fetch('https://api.soundcloud.com/tracks?client_id=db1a9cf92ac128e893bad0c79db66
                 </div>
                 <Col s={12} className='grid-example'>
                         <Controls 
-                        {...this.props}/> 
+                        songs = {this.state.songs}/> 
                 </Col>
             </Row>
             <Row>
