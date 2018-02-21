@@ -53,19 +53,19 @@ class Controls extends Component {
         audio.crossOrigin = 'anonymous'
         console.log(audio)
     }
-    timeBar(props) {
-        const Play = props.id
-        if (e === true) {
-            React.createElement(
-                ProgressBar.circle,
-                {
-                color: '#FCB03C',
-                duration: 3000,
-                easing: 'easeInOut'}
-            )
+    // timeBar(props) {
+    //     const Play = props.id
+    //     if (play === true) {
+    //         React.createElement(
+    //             ProgressBar.circle,
+    //             {
+    //             color: '#FCB03C',
+    //             duration: 3000,
+    //             easing: 'easeInOut'}
+    //         )
             
-        };
-        }
+    //     };
+    //     }
     // skipSong () {
     //     console.log("skip")
     // }
