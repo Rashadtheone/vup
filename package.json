@@ -12,6 +12,7 @@
     "react-materialize": "^1.1.2",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
+    "react-soundcloud": "^0.1.1",
     "react-soundplayer": "^1.0.4",
     "soundcloud": "^3.3.0",
     "soundcloud-audio": "^1.2.2"

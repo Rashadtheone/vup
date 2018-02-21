@@ -23,9 +23,10 @@ fetch('https://api.soundcloud.com/tracks?client_id=db1a9cf92ac128e893bad0c79db66
     const songs = data.map(song => {
         return (
             data = {
-                id: song.id,
+                song_id: song.id,
                 title: song.title,
                 songDuration: song.duration,
+                trackUri: song.uri,
                 user: {
                     name: song.user.username,
                     id: song.user.id,

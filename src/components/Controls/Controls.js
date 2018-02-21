@@ -1,27 +1,38 @@
 import React, { Component } from 'react';
+import 'node-soundcloud'
+import { PlayButton, Icons } from 'react-soundplayer/components';
+const { SoundCloudLogoSVG } = Icons;
+var SC = require('node-soundcloud')
 
 class Controls extends Component {
-    constructor() {
+    constructor(props) {
         super(props)
+        this.playSong = this.playSong.bind(this);
+        this.stopSong = this.stopSong.bind(this);
+        this.skipSong = this.skipSong.bind(this);
+        this.saveSong = this.saveSong.bind(this);
     }
-    function playSong () {
-    
+    playSong() {
+        console.log("play")
+        var song = this.audioStream = new Audio(this.props.trackUri +'/stream?client_id='+ this.props.clientId);
+        console.log(song)
     }
-    function stopSong () {
-
+    stopSong () {
+        console.log("stop")
     }
-    function skipSong () {
-
+    skipSong () {
+        console.log("skip")
     }
-    function saveSong () {
-
+    saveSong () {
+        console.log("save")
     }
     render() {
         return (
             <div className='controls'>
-                <input type='button' value='Play' />
-                <input type='button' value='Forward' />
-                <input type='button' value='Backward' />
+                <input type='button' value='Forward' onClick={this.skipSong}/>
+                <input type='button' value='Play' onClick={this.playSong}/>
+                <input type='button' value='Stop' onClick={this.stopSong}/>
+                <input type='button' value='Backward' onClick={this.saveSong}/>
             </div>
         );
     }
