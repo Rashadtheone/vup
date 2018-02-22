@@ -2,26 +2,27 @@ import React, { Component } from 'react';
 import PIXI from 'pixi.js';
 
 
-class Visuals extends Component {
-
-    static propTypes = {
-        zoomLevel: PropTypes.number.isRequired
-    };
-
-    constructor( props ) { 
-        super(props);
-        
-        //bind our animate function
-        this.animate = this.animate.bind(this);
-    }
-
+export class Visuals extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            blank: 0,
+        }
+        this.createCanvas = this.createCanvas.bind(this);
     }
+    createCanvas() {
+        // let app = new PIXI({width: 500, height: 500}); 
+        React.createElement(
+            new PIXI({width: "500", height: "500"})
+          )
+          
+    }
+    
+    
     render() {
         return (
             <div>
-                
+                <input type="button" onClick={this.createCanvas} />
             </div>
         );
     }

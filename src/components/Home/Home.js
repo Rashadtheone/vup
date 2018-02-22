@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import Visuals from '../Visuals/Visuals';
 import Navi from '../Navi/Navi';
 import Controls from '../Controls/Controls';
 import Playlist from '../Playlist/Playlist';
 import {Row, Col} from 'react-materialize'
 import './home.css';
+
 
 class Home extends Component {
     constructor () {
@@ -61,7 +63,7 @@ fetch('https://api.soundcloud.com/tracks?client_id=db1a9cf92ac128e893bad0c79db66
                     </a>    
             </Col>
             <Col s={6}>
-            equalizer
+            <Visuals />
             </Col>
             <Col s={3}>
 
