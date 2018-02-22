@@ -7,7 +7,7 @@ class Navi extends Component {
         return (
             <div>
                 <SideNav
-	trigger={<Button>SIDE NAV DEMO</Button>}
+	trigger={<Button>|||</Button>}
 	options={{ closeOnClick: true }}
 	>
 	<SideNavItem userView

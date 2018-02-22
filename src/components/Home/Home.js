@@ -3,6 +3,7 @@ import Navi from '../Navi/Navi';
 import Controls from '../Controls/Controls';
 import Playlist from '../Playlist/Playlist';
 import {Row, Col} from 'react-materialize'
+import './home.css';
 
 class Home extends Component {
     constructor () {
@@ -28,12 +29,12 @@ fetch('https://api.soundcloud.com/tracks?client_id=db1a9cf92ac128e893bad0c79db66
                 title: song.title,
                 songDuration: song.duration,
                 trackUri: song.uri,
-                user: {
-                    name: song.user.username,
-                    id: song.user.id,
-                    pic: song.user.avatar_url,
-                    scl: song.user.permalink_url
-                },
+                
+                name: song.user.username,
+                id: song.user.id,
+                pic: song.user.avatar_url,
+                scl: song.user.permalink_url,
+            
                 artwork: song.artwork_url,
                 genre: song.genre,
                 stream: song.stream_url,
@@ -53,12 +54,20 @@ fetch('https://api.soundcloud.com/tracks?client_id=db1a9cf92ac128e893bad0c79db66
         return (
             <div className="main-container">
             <Row>
-                <Col s={12} className='grid-example'>
-                    <div className='songLables'>
-                        <h3>{this.state.songs.title}</h3>
-                    </div>
+            <Col s={3} className='grid-example'>
+                    <h4>{this.state.songs.name}</h4>
+                    <a src ={this.state.songs.scl} >
+                    <img src ={this.state.songs.pic} />
+                    </a>    
+            </Col>
+            <Col s={6}>
+            equalizer
+            </Col>
+            <Col s={3}>
+
                     <div className="cover">
                         <img src={this.state.songs.artwork} />
+                        <h3>{this.state.songs.title}</h3>
                     </div>
                 </Col>
             </Row>
