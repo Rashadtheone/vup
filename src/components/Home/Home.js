@@ -46,13 +46,13 @@ fetch('https://api.soundcloud.com/tracks?client_id=db1a9cf92ac128e893bad0c79db66
     })
     // console.log(songs)
     this.setState({songs: data})
-    console.log("state", this.state.songs)
+    // console.log("state", this.state.songs)
 })
 
 
 }
     render() {
-        console.log("rendered state", this.state)
+        // console.log("rendered state", this.state)
         return (
             <div className="main-container">
             <Row>

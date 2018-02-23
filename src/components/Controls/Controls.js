@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import 'node-soundcloud'
-import { PlayButton, Icons } from 'react-soundplayer/components';
 import 'cors'
 var ProgressBar = require('progressbar.js')
-const { SoundCloudLogoSVG } = Icons;
 var SC = require('soundcloud')
 
 class Controls extends Component {
