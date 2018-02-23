@@ -4,38 +4,26 @@ import Konva from 'konva';
 
 class CD extends Component {
   constructor(props) {
-    super(props) 
+    super(props);
+    console.log(props);
       this.state = {
-        songs:[],
         color: 'green',
-        image: null
+        image: null,
+        song: props.song
       };
-     
   }
 
-  componentDidMount() {
-    console.log(this.props.songs)
-    // if this.props.song.artwork is falsey, then set it to pic
-    const image = new window.Image()
-    image.src = this.props.songs.artwork || this.props.songs.pic
-    image.onload = () => {
-      // setState will redraw layer
-      // because "image" property is changed
-      this.setState({
-        image: image
-      });
-    };
-    console.log(this.state)
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    this.setState({song: nextProps.song});
   }
-
-  // move th
 
   handleClick = () => {
     this.setState({
       color: Konva.Util.getRandomColor()
     });
     const image = new window.Image()
-    image.src = this.props.songs.artwork || this.props.songs.pic
+    image.src = this.state.song.artwork || this.state.song.pic
     image.onload = () => {
       // setState will redraw layer
       // because "image" property is changed
@@ -69,20 +57,29 @@ class CD extends Component {
 
 class Visuals extends Component {
   constructor(props) {
-    super(props) 
-  }
-  render() {
+    super(props);
+    console.log(props);
     this.state = {
-      cdpic: this.props.songs.artwork
+      song: null
     }
+  }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    this.setState({song: nextProps.song});
+  }
 
-    console.log(this.props.songs)
+  render() {
+    console.log(this.props.song);
     return (
       <div className="fun-board">
       <Stage width={500} height={500}>
         <Layer>
-          <CD songs = {this.props.songs}/>
+        <Text text="click me!"/>
+          {
+            this.state.song && 
+            <CD song = {this.props.song}/>
+            }
         </Layer>
       </Stage>
       </div>

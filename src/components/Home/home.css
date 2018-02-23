@@ -3,7 +3,10 @@
 }
 
 .songLabels {
-    border: black 5px;
+    border: 5px;
+}
+.controls {
+    border: 5px;
 }
 .controls > input {
     max-height: 100px;
@@ -16,11 +19,15 @@
 #play {
     background-color: green;
     margin-right: 5px;
+    height: 50px;
+    margin: 10px;
 }
 
 #stop {
     background-color: firebrick;
     margin-right: 5px;
+    height: 50px;
+    margin: 10px;
 }
 
 .pulse {
