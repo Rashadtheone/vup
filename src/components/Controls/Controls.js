@@ -61,10 +61,10 @@ class Controls extends Component {
             <div className='timeBar'>
             </div>
             <div className='controls'>
-                <input type='button' value='Forward' onClick={this.skipSong} class='grow'/>
-                <input type='button' value='Play' onClick={this.playSong} id='play' class='pulse grow'/>
-                <input type='button' value='Stop' onClick={this.stopSong} id='stop' class='pulse grow'/>
-                <input type='button' value='Backward' onClick={this.saveSong} class='grow'/>
+                <input type='button' value='Forward' onClick={this.skipSong} className='grow'/>
+                <input type='button' value='Play' onClick={this.playSong} id='play' className='pulse grow'/>
+                <input type='button' value='Stop' onClick={this.stopSong} id='stop' className='pulse grow'/>
+                <input type='button' value='Backward' onClick={this.saveSong} className='grow'/>
             </div>
             </div>
         );
