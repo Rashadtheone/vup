@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'node-soundcloud'
 import 'cors'
+import { Z_UNKNOWN } from 'zlib';
 var ProgressBar = require('progressbar.js')
 var SC = require('soundcloud')
 
@@ -71,7 +72,7 @@ class Controls extends Component {
                     <div>
                         <input type='button' value='Play' onClick={this.playSong} id='play' className='pulse grow'/>
                         <input type='button' value='Stop' onClick={this.stopSong} id='stop' className='pulse grow'/>
-                        <input type='button' value='Backward' onClick={this.saveSong} className='grow'/>
+                        <input type='button' value='SaveSong' onClick={this.saveSong} className='grow'/>
                     </div>
                 }
             </div>
@@ -81,3 +82,5 @@ class Controls extends Component {
 }
 
 export default Controls;
+
+
