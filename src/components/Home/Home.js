@@ -67,19 +67,21 @@ setCurrentSong(id) {
             <Row>
             <Col s={3} className='grid-example'>
                     { this.state.currentSong && 
-            <div class="card">
-            <div class="card">
-                <div class="card-image">
-                <img src={this.state.currentSong.pic} />
+            <div className="row">
+            <div className="col s12 m12">
+            <div className="card">
+                <div className="card-image">
+                <img className="responsive-img" src={this.state.currentSong.pic} />
                 <span class="card-title"><h4>{this.state.currentSong.title}</h4></span>
                 <a href={this.state.currentSong.scl} target="_blank" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons" >cloud</i></a>
                 </div>
-                <div class="card-content">
+                <div className="card-content">
                 { this.state.currentSong && <div className="cover">
                         <img src={this.state.currentSong.artwork} />
                         <h6>{this.state.currentSong.title}</h6>
                     </div>}
                 </div>
+            </div>
             </div>
             </div>
                     }
@@ -97,16 +99,9 @@ setCurrentSong(id) {
             <Row>
 
                 <Col s={12} className='grid-example'>
-
-                </Col>
-            </Row>
-            <Row>
-            <Col s={12} className='grid-example'>
-
-                                            <Controls
+                <Controls
                         song = {this.state.currentSong}/>
                 </Col>
-
             </Row>
             </div>
         );

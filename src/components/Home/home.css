@@ -1,17 +1,20 @@
 .main-container {
     border: 5px;
+    display:flex;
+    flex-flow: row;
+    flex-wrap:wrap;
+}
+nav {
+    height: 8vh;
+    background-color: black;
 }
 
-.container {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-}
 .songLabels {
     border: 5px;
 }
 .controls {
     border: 5px;
+    margin: auto;
 }
 .controls > input {
     max-height: 100px;
@@ -19,6 +22,15 @@
     border-radius: 50%;
     margin: 10px;
     margin-left: 15px;
+}
+.card {
+    width: 100%;
+    min-width: 300px;
+    height: 70vh;
+}
+.card .card-image {
+    width: 100%;
+    min-width: 300px;
 }
 
 #play {
@@ -78,4 +90,12 @@
 /* CSS for CANVAS */
 .konvajs-content {
   margin:auto;
+}
+
+@media only screen and (max-width: 500px) {
+    .main-container {
+        display:flex;
+        flex-flow: column;
+
+    }
 }

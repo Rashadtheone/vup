@@ -5,9 +5,9 @@ import {SideNav, SideNavItem, Button, Icon} from 'react-materialize'
 class Navi extends Component {
     render() {
         return (
-            <div>
+            <nav>
                 <SideNav
-	trigger={<Button>|||</Button>}
+	trigger={<Button>Navigation</Button>}
 	options={{ closeOnClick: true }}
 	>
 	<SideNavItem userView
@@ -24,7 +24,7 @@ class Navi extends Component {
 	<SideNavItem subheader>User</SideNavItem>
 	<SideNavItem waves href='#!third'>Profile</SideNavItem>
 </SideNav>
-            </div>
+            </nav>
         );
     }
 }
