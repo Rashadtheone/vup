@@ -20,6 +20,7 @@ class Home extends Component {
 
 componentDidMount() {
 fetch('https://api.soundcloud.com/tracks?client_id=db1a9cf92ac128e893bad0c79db66245')
+// fetch('https://api.soundcloud.com/users?client_id=db1a9cf92ac128e893bad0c79db66245')
 //lifestyle method fetch api!  attach on client ID
 .then(res => {
     return res.json()
@@ -39,6 +40,7 @@ fetch('https://api.soundcloud.com/tracks?client_id=db1a9cf92ac128e893bad0c79db66
             id: song.user.id,
             pic: song.user.avatar_url,
             scl: song.user.permalink_url,
+            followers: song.user.followers,
 
             artwork: song.artwork_url,
             genre: song.genre,
@@ -65,39 +67,46 @@ setCurrentSong(id) {
             <Row>
             <Col s={3} className='grid-example'>
                     { this.state.currentSong && 
-                        <div>
-                            <h4>{this.state.currentSong.name}</h4>
-                    <a src ={this.state.currentSong.scl} >
-                    <img src ={this.state.currentSong.pic} />
-                    </a>
-                        </div>
+            <div class="card">
+            <div class="card">
+                <div class="card-image">
+                <img src={this.state.currentSong.pic} />
+                <span class="card-title"><h4>{this.state.currentSong.title}</h4></span>
+                <a href={this.state.currentSong.scl} target="_blank" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons" >cloud</i></a>
+                </div>
+                <div class="card-content">
+                { this.state.currentSong && <div className="cover">
+                        <img src={this.state.currentSong.artwork} />
+                        <h6>{this.state.currentSong.title}</h6>
+                    </div>}
+                </div>
+            </div>
+            </div>
                     }
             </Col>
-            <Col s={6}>
+            <Col s={5}>
             <Visuals
             song = {this.state.currentSong}/>
             </Col>
-            <Col s={3}>
-
-                   { this.state.currentSong && <div className="cover">
-                        <img src={this.state.currentSong.artwork} />
-                        <h3>{this.state.currentSong.title}</h3>
-                    </div>}
+            <Col s={4}>
+            <Playlist
+                    songs = {this.state.songs} 
+                    setCurrentSong = {this.setCurrentSong}/>
                 </Col>
             </Row>
             <Row>
 
                 <Col s={12} className='grid-example'>
-                        <Controls
-                        song = {this.state.currentSong}/>
+
                 </Col>
             </Row>
             <Row>
             <Col s={12} className='grid-example'>
-                    <Playlist
-                    songs = {this.state.songs} 
-                    setCurrentSong = {this.setCurrentSong}/>
+
+                                            <Controls
+                        song = {this.state.currentSong}/>
                 </Col>
+
             </Row>
             </div>
         );

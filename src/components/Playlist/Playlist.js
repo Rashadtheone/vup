@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './playlist.css';
 class Playlist extends Component {
     constructor(props) {
         super(props);
@@ -17,19 +17,24 @@ class Playlist extends Component {
         var songsList = [];
         Object.keys(this.state.songs).forEach(id => { songsList.push(this.state.songs[id]) });
         return (
+            <div className='playlist-container'>
+            <div className='playlistTitle'>
+            <h5>Playlist</h5></div>
             <div className='playlist'>
+
                 <ul>
                 {
                         songsList.length > 0 && 
                         songsList.map(song => (
-                            <li key={song.song_id} onClick={() => {this.props.setCurrentSong(song.song_id)}}>{song.title}</li>
+                            <li className="songsInList" key={song.song_id} onClick={() => {this.props.setCurrentSong(song.song_id)}}>{song.title}</li>
                         ))
                     }
                     {
                         songsList.length == 0 && 
-                        <li>No Songs...</li>
+                        <li className="songsInList">No Songs...</li>
                     }
                 </ul>
+            </div>
             </div>
         );
     }

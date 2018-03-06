@@ -1,0 +1,37 @@
+.songsInList {
+    display: block;
+    background-color: black;
+    color: whitesmoke;
+    width: 100%;
+    height:6vh;
+    border: white 1px solid;
+    text-align: center;
+    margin:auto;
+}
+
+.playlist {
+    background-color:black;
+    /* border: black 5px solid; */
+    width: 90%;
+    margin: auto;
+    height: 70vh;
+    overflow: scroll;
+    font-size: 13px;
+}
+
+.playlistTitle {
+    width: 100%;
+    overflow-y:none;
+    margin: auto;
+    background:black;
+    color:white;
+    height: 8vh;
+    text-align: center;
+}
+
+ul li:hover {background: whitesmoke;
+            color:black}
+
+ul li:visited {background: #555;}
+
+ul li:active {background: #555;}
