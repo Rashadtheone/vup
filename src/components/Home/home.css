@@ -13,8 +13,8 @@ nav {
     border: 5px;
 }
 .controls {
-    border: 5px;
-    margin: auto;
+    border: 5px solid black;
+    width: 100%;
 }
 .controls > input {
     max-height: 100px;
@@ -35,14 +35,12 @@ nav {
 
 #play {
     background-color: green;
-    margin-right: 5px;
     height: 50px;
     margin: 10px;
 }
 
 #stop {
     background-color: firebrick;
-    margin-right: 5px;
     height: 50px;
     margin: 10px;
 }

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import Visuals from '../Visuals/Visuals';
-import Navi from '../Navi/Navi';
+// import Visuals from '../Visuals/Visuals';
+// import Navi from '../Navi/Navi';
 import Controls from '../Controls/Controls';
 import Playlist from '../Playlist/Playlist';
 import {Row, Col} from 'react-materialize'
 import './home.css';
 import 'axios'
+import Equalizer from '../Visuals/Equalizer';
 
 
 class Home extends Component {
@@ -87,7 +88,7 @@ setCurrentSong(id) {
                     }
             </Col>
             <Col s={5}>
-            <Visuals
+            <Equalizer
             song = {this.state.currentSong}/>
             </Col>
             <Col s={4}>
@@ -98,10 +99,9 @@ setCurrentSong(id) {
             </Row>
             <Row>
 
-                <Col s={12} className='grid-example'>
+               
                 <Controls
                         song = {this.state.currentSong}/>
-                </Col>
             </Row>
             </div>
         );
