@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import 'node-soundcloud'
 import 'cors'
-import { Z_UNKNOWN } from 'zlib';
-var ProgressBar = require('progressbar.js')
-var SC = require('soundcloud')
+
 
 class Controls extends Component {
     constructor(props) {
@@ -20,6 +18,7 @@ class Controls extends Component {
         }
         this.playSong = this.playSong.bind(this);
         this.stopSong = this.stopSong.bind(this);
+        
         // this.saveSong = this.saveSong.bind(this);
     }
 
@@ -72,7 +71,7 @@ class Controls extends Component {
                     <div>
                         <input type='button' value='Play' onClick={this.playSong} id='play' className='pulse grow'/>
                         <input type='button' value='Stop' onClick={this.stopSong} id='stop' className='pulse grow'/>
-                        <input type='button' value='SaveSong' onClick={this.saveSong} className='grow'/>
+                        <div className='timer' />
                     </div>
                 }
             </div>
