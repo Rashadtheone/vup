@@ -25,7 +25,7 @@ class Playlist extends Component {
                         songsList.length > 0 && 
                         songsList.map(song => (
                             <div className="songShell" key={song.song_id} onClick={() => {this.props.setCurrentSong(song.song_id)}}>
-                            <img src={song.artwork || song.pic} />
+                            <img src={song.artwork || song.pic} alt="artist"/>
                             <div className="songTitle">
                             {song.title}
                             </div>
@@ -36,7 +36,7 @@ class Playlist extends Component {
                         ))
                     }
                     {
-                        songsList.length == 0 && 
+                        songsList.length === 0 && 
                         <li className="songsInList">No Songs...</li>
                     }  
             </div>

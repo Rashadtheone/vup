@@ -31,12 +31,9 @@ class Controls extends Component {
         e.preventDefault()
 
         const client = 'db1a9cf92ac128e893bad0c79db66245'
-        const secret = '565ccc1cd70f68daecd6be5a1575a954'
         var stream = this.props.song.stream
-        var uri = this.props.song.uri
         var context = new AudioContext()
         var audio = new Audio(),
-            source,
             url = stream +'?' + 'client_id=' + client;
         audio.src = url;
 
@@ -46,8 +43,7 @@ class Controls extends Component {
         }, () => {
             this.state.source.connect(context.destination);
             this.state.source.mediaElement.play();
-            this.state.audio.crossOrigin = 'anonymous'
-            var playing = this.state.source.context.state 
+            this.setState.audio.crossOrigin = 'anonymous' 
             console.log(e)
         });        
     }

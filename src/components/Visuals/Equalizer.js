@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Stage, Layer, Ring , Text, Group} from 'react-konva';
+import { Stage, Layer, Ring , Group} from 'react-konva';
 import Konva from 'konva';
 
 class CD extends Component {

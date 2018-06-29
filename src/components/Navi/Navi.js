@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom'
-import {SideNav, SideNavItem, Button, Icon} from 'react-materialize'
-// import './Navi.css';
+import { Link } from 'react-router-dom'
+import {SideNav, SideNavItem, Button} from 'react-materialize'
 class Navi extends Component {
     render() {
         return (
