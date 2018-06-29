@@ -21,19 +21,24 @@ class Playlist extends Component {
             <div className='playlistTitle'>
             <h5>Playlist</h5></div>
             <div className='playlist'>
-
-                <ul>
                 {
                         songsList.length > 0 && 
                         songsList.map(song => (
-                            <li className="songsInList" key={song.song_id} onClick={() => {this.props.setCurrentSong(song.song_id)}}>{song.title}</li>
+                            <div className="songShell" key={song.song_id} onClick={() => {this.props.setCurrentSong(song.song_id)}}>
+                            <img src={song.artwork || song.pic} />
+                            <div className="songTitle">
+                            {song.title}
+                            </div>
+                            <div className="artistName">
+                            {song.name}
+                            </div>
+                            </div>
                         ))
                     }
                     {
                         songsList.length == 0 && 
                         <li className="songsInList">No Songs...</li>
-                    }
-                </ul>
+                    }  
             </div>
             </div>
         );

@@ -1,47 +1,57 @@
-.songsInList {
-    display: block;
-    background-color: black;
-    color: whitesmoke;
-    width: 100%;
-    height:6vh;
-    border: white 1px solid;
-    text-align: center;
-    margin:auto;
-}
-
-.playlist {
-    background-color:black;
-    /* border: black 5px solid; */
-    width: 90%;
-    margin: auto;
-    height: 62vh;
-    overflow: scroll;
-    font-size: 13px;
-    min-width: 250px;
-}
-
-.playlistTitle {
-    width: 90%;
-    min-width: 250px;
-    overflow-y:none;
-    margin: auto;
-    background:black;
-    color:white;
-    height: 8vh;
-    text-align: center;
-}
 .playlist-container {
     width:100%;
     margin: auto;
 }
 
-ul li:hover {background: whitesmoke;
-            color:black}
 
-ul li:visited {background: #555;}
+.playlist {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: 62vh;
+    overflow: scroll;
+    font-size: 13px;
+    min-width: 250px;
+    border: solid 1px black;
+}
 
-ul li:active {background: #555;}
+.playlistTitle {
+    width: 100%;
+    min-width: 250px;
+    overflow-y:none;
+    margin: auto;
+    border: solid 1px black;
+    color:black;
+    height: 8vh;
+    text-align: center;
+}
 
-.card .card-title {
-    font-size: 10vh;
+.songShell {
+    display:block;
+    margin: 10px;
+    width: 25%;
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    height: 22vh;
+}
+.songTitle {
+    position: relative;
+    bottom: 90%;
+    color: white;
+    font-size: 2vh;
+}
+.artistName {
+    position: relative;
+    bottom: 80%;
+    color: white;
+    font-size: 50%;
+    max-height: 
+}
+.songShell > img {
+    margin: auto;
+    width: 100%;
+    height: 20vh;
 }
