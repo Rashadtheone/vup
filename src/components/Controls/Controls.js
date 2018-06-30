@@ -23,7 +23,6 @@ class Controls extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
         this.setState({song: nextProps.song});
     }
     
@@ -44,7 +43,6 @@ class Controls extends Component {
             this.state.source.connect(context.destination);
             this.state.source.mediaElement.play();
             this.setState.audio.crossOrigin = 'anonymous' 
-            console.log(e)
         });        
     }
 
@@ -57,7 +55,6 @@ class Controls extends Component {
     }
   
     render() {
-        console.log(this.state.isPlaying)
         return (
             <div>
             <div className='timeBar'>

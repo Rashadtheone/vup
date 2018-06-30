@@ -9,7 +9,6 @@ class Playlist extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
         this.setState({songs: nextProps.songs});
     }
 

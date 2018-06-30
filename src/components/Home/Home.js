@@ -11,12 +11,13 @@ class Home extends Component {
         super()
         this.state = {
             songs : {},
-            currentSong: null
+            currentSong: null,
         }
         this.setCurrentSong = this.setCurrentSong.bind(this);
     }
 
 componentDidMount() {
+
 fetch('https://api.soundcloud.com/tracks?client_id=db1a9cf92ac128e893bad0c79db66245')
 // fetch('https://api.soundcloud.com/users?client_id=db1a9cf92ac128e893bad0c79db66245')
 //lifestyle method fetch api!  attach on client ID
@@ -58,27 +59,6 @@ setCurrentSong(id) {
     this.setState({currentSong: song});
 }
 
-
-// componentWillMount(id) {
-//     fetch('https://api.soundcloud.com/users/${this.state.songs.user.id}?client_id=db1a9cf92ac128e893bad0c79db66245')
-//         .then(res => {
-//             return res.json()
-//             console.log(res)
-//         }).then(data => {
-//             console.log(data)
-//             var users = {}; 
-//             data.forEach(user => {
-//                 users[user.id] = {
-    
-//                 }
-//             })
-            
-//             console.log('users: ', users)
-//             this.setState({users: users})
-//             // console.log("state", this.state.songs)
-//         })
-//     }
-
     render() {
         // console.log("rendered state", this.state)
         return (
@@ -86,23 +66,6 @@ setCurrentSong(id) {
             <Row>
             <Col s={3} className='grid-example'>
                     { this.state.currentSong && 
-            // <div className="row">
-            // <div className="col s12 m12">
-            // <div className="card">
-            //     <div className="card-image">
-            //     <img className="responsive-img" src={this.state.currentSong.pic || this.state.currentSong.artwork} />
-            //     <span class="card-title"><h4>{this.state.currentSong.title}</h4></span>
-            //     <a href={this.state.currentSong.scl} target="_blank" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons" >cloud</i></a>
-            //     </div>
-            //     <div className="card-content">
-            //     { this.state.currentSong && <div className="cover">
-            //             <img src={this.state.currentSong.artwork} />
-            //             <h6>{this.state.currentSong.title}</h6>
-            //         </div>}
-            //     </div>
-            // </div>
-            // </div>
-            // </div>
             <Card header={
             <CardTitle 
                 reveal image={this.state.currentSong.pic || this.state.currentSong.artwork} 

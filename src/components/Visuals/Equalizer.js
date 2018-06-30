@@ -5,7 +5,6 @@ import Konva from 'konva';
 class CD extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
       this.state = {
         color: 'green',
         image: null,
@@ -14,7 +13,6 @@ class CD extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     this.setState({song: nextProps.song});
   }
 
@@ -25,8 +23,6 @@ class CD extends Component {
     const image = new window.Image()
     image.src = this.state.song.artwork || this.state.song.pic
     image.onload = () => {
-      // setState will redraw layer
-      // because "image" property is changed
       this.setState({
         image: image
       });
@@ -61,20 +57,17 @@ class CD extends Component {
 class Equalizer extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
       song: null
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     this.setState({song: nextProps.song});
   }
 
 
   render() {
-    console.log(this.props.song);
     return (
       <div className="fun-board">
       <Stage width={500} height={500}>
