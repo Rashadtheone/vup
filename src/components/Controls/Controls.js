@@ -13,7 +13,7 @@ class Controls extends Component {
             pausedAt: 0, 
             context: new AudioContext(),
             audio: new Audio(),
-            source: null, 
+            source: null 
             //added the context, and audio, and source so you could access the source from different methods!
         }
         this.playSong = this.playSong.bind(this);
@@ -28,11 +28,15 @@ class Controls extends Component {
     
     playSong(e) {
         e.preventDefault()
+        
 
         const client = 'db1a9cf92ac128e893bad0c79db66245'
+        const secret = '565ccc1cd70f68daecd6be5a1575a954'
+        var uri = this.props.song.uri
         var stream = this.props.song.stream
         var context = new AudioContext()
         var audio = new Audio(),
+            source,
             url = stream +'?' + 'client_id=' + client;
         audio.src = url;
 
@@ -42,7 +46,9 @@ class Controls extends Component {
         }, () => {
             this.state.source.connect(context.destination);
             this.state.source.mediaElement.play();
-            this.setState.audio.crossOrigin = 'anonymous' 
+            this.state.audio.crossOrigin = 'anonymous'
+            var playing = this.state.source.context.state 
+            console.log(e)
         });        
     }
 
